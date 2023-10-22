@@ -4,6 +4,10 @@
   <groupId>ru.spbstu.telematics.java</groupId>
   <artifactId>icp</artifactId>
   <packaging>jar</packaging>
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
   <version>1.0-SNAPSHOT</version>
   <name>icp</name>
   <url>http://maven.apache.org</url>
