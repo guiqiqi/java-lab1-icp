@@ -4,7 +4,6 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -111,5 +110,13 @@ public class AppTest
 
         // Clean resource
         removeFileOrDirectory(new_empty_folder);
+    }
+
+    public void testSameFileDoNotCopyWithFilename() {
+        assertFalse(copyPartialVersion("parent/parent.file", "parent/parent.file"));
+    }
+
+    public void testSameFileDoNotCopyWithoutFilename() {
+        assertFalse(copyPartialVersion("parent/parent.file", "parent"));
     }
 }

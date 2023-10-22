@@ -14,6 +14,7 @@ public class CopyableFile extends CopyablePath {
 
     /**
      * Proxy copy function for Files.Copy and proxy all IOException with CopyBaseException.
+     * If two file's paths are same, skip copying and throw CopyBaseException.
      * @param src: source path
      * @param dest: destination path
      * @param option: copy option except StandardCopyOption.COPY_ATTRIBUTES
@@ -22,6 +23,9 @@ public class CopyableFile extends CopyablePath {
      * @see java.nio.file.StandardCopyOption
      */
     private void copyProxy(Path src, Path dest, CopyOption option) throws CopyBaseException {
+        // Check whether
+        if (src.equals(dest))
+            throw new CopyBaseException(String.format("%s and %s are identical (not copied).", src, dest));
         try {
             if (verboseMode)
                 System.out.printf("%s -> %s\n", src, dest);

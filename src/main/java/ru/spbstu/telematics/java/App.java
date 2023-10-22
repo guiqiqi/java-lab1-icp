@@ -43,12 +43,8 @@ public class App {
             dest = new CopyableFolder(dest_path);
 
         // Special case with cp command behaviour - if destination folder already exist, create a new one with basename of source
-        if (Files.exists(dest.path))
+        if (Files.exists(dest.path) && Files.isDirectory(dest.path))
             dest = new CopyableFolder(dest.path.resolve(src.path.getFileName()));
-
-        // Check if source and destination are same
-        if (src.path.equals(dest.path))
-            throw new CopyBaseException(String.format("%s and %s are identical (not copied).", src.path.getFileName(), dest.path.getFileName()));
 
         // Start copying
         src.copy(dest);
