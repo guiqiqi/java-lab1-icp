@@ -7,6 +7,10 @@ import java.nio.file.StandardCopyOption;
 import java.nio.file.Path;
 import java.nio.file.Files;
 
+/**
+ * Copyable file object.
+ * Defining operations in file copy process.
+ */
 public class CopyableFile extends CopyablePath {
 
     CopyableFile(String path) { super(path); }

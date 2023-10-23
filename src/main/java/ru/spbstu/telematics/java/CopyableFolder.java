@@ -9,6 +9,10 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Path;
 import java.nio.file.Files;
 
+/**
+ * Copyable folder object.
+ * Defining operations of folder copy process.
+ */
 public class CopyableFolder extends CopyablePath {
 
     CopyableFolder(String path) { super(path); }
