@@ -109,6 +109,8 @@ public class AppTest
         assertTrue(Files.isDirectory(new_empty_folder));
 
         // Clean resource
+        Path gitkeep_file = generatePath("empty/.gitkeep");
+        removeFileOrDirectory(gitkeep_file);
         removeFileOrDirectory(new_empty_folder);
     }
 
